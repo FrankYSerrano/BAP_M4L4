@@ -13,4 +13,47 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <!-- Selenium Java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.21.0</version>
+        </dependency>
+
+        <!-- WebDriverManager for automatic driver setup -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.8.0</version>
+        </dependency>
+
+        <!-- JUnit 5 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Needed to run exec:java if you're using it -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+
+            <!-- Maven Surefire Plugin to run JUnit 5 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
